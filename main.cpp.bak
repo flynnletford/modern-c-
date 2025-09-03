@@ -1,0 +1,111 @@
+// #include <iostream>
+
+// std::string ToUpper(const std::string &str)
+// {
+//     std::string result = str;
+
+//     for (auto &c : result)
+//     {
+//         c = std::toupper(c);
+//     }
+
+//     return result;
+// }
+
+// std::string ToLower(const std::string &str)
+// {
+//     std::string result = str;
+
+//     for (auto &c : result)
+//     {
+//         c = std::tolower(c);
+//     }
+
+//     return result;
+// }
+
+// enum class Case
+// {
+//     SENSITIVE,
+//     INSENSITIVE
+// };
+
+// size_t Find(
+//     const std::string &source,           // Source string to be searched
+//     const std::string &search_string,    // The string to search for
+//     Case searchCase = Case::INSENSITIVE, // Choose case sensitive/insensitive search
+//     size_t offset = 0)
+// { // Start the search from this offset
+//     // Implementation
+
+//     auto src = source;
+//     auto tgt = search_string;
+
+//     if (searchCase == Case::INSENSITIVE)
+//     {
+//         src = ToLower(src);
+//         tgt = ToLower(tgt);
+//     }
+
+//     for (size_t i = offset; i < src.length(); i++)
+//     {
+
+//         size_t index = 0;
+//         while (true)
+//         {
+
+//             if (src[i + index] != tgt[index])
+//             {
+//                 break;
+//             }
+
+//             if (index == search_string.length() - 1)
+//             {
+//                 return i;
+//             }
+
+//             index++;
+//         }
+//     }
+
+//     /*
+//     return position of the first character
+//     of the substring, else std::string::npos
+//     */
+//     return std::string::npos;
+// }
+
+// int main()
+// {
+//     // //Try to modify x1 & x2 and see the compilation output
+//     // int x = 5 ;
+//     // const int MAX = 12 ;
+//     // int &ref_x1 = x ;
+//     // const int &ref_x2 = x ;
+
+//     // //Try to modify the pointer (e.g. ptr1) and the pointee value (e.g. *ptr1)
+//     // const int *ptr1 = &x ;
+//     // int *const ptr2 = &x ;
+//     // const int * const ptr3 = &x ;
+
+//     // //Find which declarations are valid. If invalid, correct the declaration
+//     // const int *ptr3 = &MAX ;
+//     // const int *ptr4 = &MAX ;
+
+//     // const int &r1 = ref_x1 ;
+//     // const int &r2 = ref_x2 ;
+
+//     // const int *&p_ref1 = ptr1 ;
+//     // int*const&p_ref2 = ptr2 ;
+
+//     // const std::string input{"test 123 abc"};
+//     // std::cout << "Upper: " << ToUpper(input) << std::endl;
+//     // std::cout << "Lower: " << ToLower(input) << std::endl;
+
+//     const std::string source{"test 123abc"};
+//     const std::string search{"aBc"};
+
+//     const auto result = Find(source, search, Case::SENSITIVE, 0);
+
+//     std::cout << "result: " << result << std::endl;
+// }
